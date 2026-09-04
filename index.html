@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isuri Nanomi Arachchige</title>
+<meta name="description" content="Isuri Nanomi Arachchige — Postdoctoral Research Associate, University of Cambridge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sidebar-bg: #193747;
+    --sidebar-fg: #E7EDEE;
+    --sidebar-fg-dim: #9FB4BB;
+    --content-bg: #FBFAF7;
+    --ink: #23282B;
+    --ink-soft: #5B6469;
+    --accent: #C9862B;
+    --rule: #E3E0D8;
+    --sidebar-w: 280px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+
+  body{
+    margin: 0;
+    background: var(--content-bg);
+    color: var(--ink);
+    font-family: "Karla", -apple-system, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    color: var(--sidebar-fg);
+    display: flex;
+    flex-direction: column;
+    padding: 2.75rem 2rem;
+    overflow-y: auto;
+  }
+
+  .avatar{
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #1A1D1B;
+    font-family: "Lora", serif;
+    font-weight: 600;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+  }
+
+  .sidebar h1{
+    font-family: "Lora", serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .sidebar .tagline{
+    font-size: 0.92rem;
+    color: var(--sidebar-fg-dim);
+    margin: 0 0 2.2rem 0;
+  }
+
+  .sidebar nav{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    margin-bottom: auto;
+    padding-bottom: 2.5rem;
+  }
+
+  .sidebar nav a{
+    text-decoration: none;
+    color: var(--sidebar-fg-dim);
+    padding: 0.15rem 0;
+    border-left: 2px solid transparent;
+    padding-left: 0.75rem;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .sidebar nav a:hover,
+  .sidebar nav a:focus-visible{
+    color: var(--sidebar-fg);
+    border-left-color: var(--accent);
+  }
+
+  .social{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(231,237,238,0.15);
+  }
+  .social a{
+    text-decoration: none;
+    color: var(--sidebar-fg-dim);
+  }
+  .social a:hover{ color: var(--accent); }
+
+  /* ---------- Content ---------- */
+  .content{
+    margin-left: var(--sidebar-w);
+    max-width: 660px;
+    padding: 4.5rem 3rem 6rem 3.5rem;
+  }
+
+  .content section{ margin-bottom: 3.6rem; }
+  .content section:target{ scroll-margin-top: 2rem; }
+
+  .content h2{
+    font-family: "Lora", serif;
+    font-weight: 600;
+    font-size: 1.55rem;
+    margin: 0 0 1.2rem 0;
+    color: var(--ink);
+  }
+
+  .content p{ margin: 0 0 1.05rem 0; }
+  .content section > p:last-child{ margin-bottom: 0; }
+
+  .content .lead-item{ margin: 0 0 1rem 0; }
+  .content .lead-item b{
+    font-family: "Lora", serif;
+    font-weight: 600;
+  }
+
+  .pub{
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .pub:first-of-type{ border-top: none; padding-top: 0; }
+  .pub .year{
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .pub .title{ font-weight: 700; margin-top: 0.15rem; }
+  .pub .meta{
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin-top: 0.15rem;
+  }
+
+  .scholar-note{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-top: 1.3rem;
+  }
+
+  footer.page-footer{
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .sidebar{
+      position: static;
+      width: auto;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1.6rem 1.5rem;
+    }
+    .avatar{ width: 56px; height: 56px; font-size: 1.2rem; margin: 0 1rem 0 0; }
+    .sidebar h1{ font-size: 1.15rem; }
+    .sidebar .tagline{ margin-bottom: 0; }
+    .sidebar nav, .social{ display: none; }
+    .content{ margin-left: 0; padding: 2.75rem 1.5rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <img class="avatar" src="image.jpeg" alt="Isuri Anuradha Nanomi Arachchige">
+  <h1>Isuri Anuradha Nanomi Arachchige</h1>
+  <p class="tagline">Postdoctoral Research Associate<br>University of Cambridge</p>
+
+  <nav aria-label="Section navigation">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="social">
+    <!-- Replace these with your real links -->
+    <a href="mailto:your.email@cam.ac.uk">Email</a>
+    <a href="https://github.com/isuri97" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://scholar.google.com/citations?user=dTW8W6QAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+    <a href="https://uk.linkedin.com/in/isuri-anuradha-92a634154" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</aside>
+
+<main class="content">
+
+  <section id="about">
+    <h2>About me</h2>
+    <p>I am a Postdoctoral Research Associate at the University of Cambridge. As part of the Humanities and AI Virtual Institute (HAVI), I build AI-based methods for archival research — tools that make fragile and sensitive historical collections searchable, structured, and interpretable.</p>
+    <p>I received my PhD in Computing from Lancaster University, supervised by Prof Ruslan Mitkov and Prof Paul Rayson, where I applied natural language processing to Holocaust survivor testimonies.</p>
+    <p class="lead-item"><b>Research focus.</b> My work spans named entity recognition, knowledge graph construction, and retrieval over sensitive historical archives, particularly Holocaust testimony collections.</p>
+    <p class="lead-item"><b>Background.</b> Before my PhD, I worked as a Software Engineer at WSO2 and was a recipient of a Google Summer of Code award. I have also served as Senior Editorial Assistant for the Journal of Natural Language Engineering, Cambridge University Press.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p>My research sits at the intersection of NLP, knowledge representation, and the digital humanities, with a focus on sensitive historical archives. Current strands include domain-adapted language models for named entity recognition over testimony corpora, incorporating differential privacy; knowledge graph construction pipelines linking people, places, and events across testimony collections; retrieval-augmented methods for archival search, including a linear-adapter RAG approach and cross-cultural analogical retrieval over narrative corpora; and the ethics of applying large language models to sensitive historical material.</p>
+    <p>I collaborate with EHRI, CLARIN-ERIC, the Wiener Holocaust Library, USHMM, and Yale's Fortunoff Video Archive.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Best reached by email at <a href="mailto:ian28@cam.ac.uk" style="text-decoration: underline;">ian28@cam.ac.uk</a>. Code and open resources are on <a href="https://github.com/isuri97" target="_blank" rel="noopener" style="text-decoration: underline;">GitHub</a>.</p>
+    <footer class="page-footer">&copy; 2026 Isuri Nanomi Arachchige</footer>
+  </section>
+
+</main>
+
+</body>
+</html>
